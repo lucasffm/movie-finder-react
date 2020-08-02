@@ -1,10 +1,15 @@
 import React from "react";
-import { Card, Button } from "antd";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { MovieCardContainer } from "./styles";
-import { Link } from "react-router-dom";
 
 function MovieCard() {
+  function handleClick() {
+    toast.error("Sucesso!!!");
+  }
+
   return (
     <MovieCardContainer>
       <Link to="/movie/1">
@@ -21,7 +26,7 @@ function MovieCard() {
           aperiam saepe cumque nulla nobis impedit facere cum nemo. Unde quaerat
           odio accusantium iste omnis dicta a soluta quia dolor neque.
         </p>
-        <Button>Ver detalhes</Button>
+        <Button onClick={handleClick}>Ver detalhes</Button>
       </div>
     </MovieCardContainer>
   );
