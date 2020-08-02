@@ -1,0 +1,17 @@
+@import "~antd/dist/antd.css";
+
+:root {
+  --white: #fff;
+  --blue: #0081a7;
+  --green: #96bb7c;
+  --yellow: #fdfcdc;
+  --red: #f07167;
+  --gray: #cccc;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--gray);
+  margin: 0;
+  padding: 0;
+}
