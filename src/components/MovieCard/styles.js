@@ -1,9 +1,10 @@
+import { Box } from "@chakra-ui/react";
 import styled from "styled-components";
-import { Card } from "antd";
 
-export const MovieCardContainer = styled(Card)`
+export const MovieCardContainer = styled(Box)`
   border: none;
   border-radius: 10px;
+  color: #000;
 
   .movie-info {
     padding: 20px;

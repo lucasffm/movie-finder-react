@@ -1,17 +1,17 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 
-import { Container, MovieAutoComplete, SearchTitle } from "./styles";
+import { Container, MovieAutoComplete } from "./styles";
 
 function Search() {
   return (
     <Container>
-      <SearchTitle>Bem vindo ao Movie Finder</SearchTitle>
       <MovieAutoComplete
         placeholder="Digite aqui o filme que está procurando..."
-        size="large"
         allowClear
-        clearIcon={MdClose}
+        icon={MdClose}
+        variant="filled"
+        size="lg"
       ></MovieAutoComplete>
     </Container>
   );

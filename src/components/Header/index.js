@@ -5,7 +5,7 @@ import { Container, Logo, LogoContainer } from "./styles";
 
 function Header() {
   return (
-    <Container>
+    <Container boxShadow="md" p="2" rounded="xs" bg="white">
       <LogoContainer to="/">
         <Logo src={logo}></Logo>
       </LogoContainer>

@@ -1,17 +1,24 @@
+import { useToast } from "@chakra-ui/react";
 import React from "react";
-import { Button } from "antd";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 
 import { MovieCardContainer } from "./styles";
 
 function MovieCard() {
+  const toast = useToast();
+
   function handleClick() {
-    toast.error("Sucesso!!!");
+    toast({
+      title: "Movie Details.",
+      description: "We've created your account for you.",
+      status: "error",
+      duration: 9000,
+      isClosable: true,
+    });
   }
 
   return (
-    <MovieCardContainer>
+    <MovieCardContainer boxShadow="lg" p="2" rounded="xs" bg="white">
       <Link to="/movie/1">
         <img
           className="movie-picture"
@@ -26,7 +33,7 @@ function MovieCard() {
           aperiam saepe cumque nulla nobis impedit facere cum nemo. Unde quaerat
           odio accusantium iste omnis dicta a soluta quia dolor neque.
         </p>
-        <Button onClick={handleClick}>Ver detalhes</Button>
+        <button onClick={handleClick}>Ver detalhes</button>
       </div>
     </MovieCardContainer>
   );
