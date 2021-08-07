@@ -1,17 +1,24 @@
 import React from "react";
-import { MdClose } from "react-icons/md";
+import { MdSearch } from "react-icons/md";
 
 import { Container, MovieAutoComplete } from "./styles";
 
 function Search() {
+  const handleChange = (event) => {
+    console.log(event.target.value);
+  };
+  const handleClick = (event) => {};
+
   return (
     <Container>
       <MovieAutoComplete
         placeholder="Digite aqui o filme que está procurando..."
-        allowClear
-        icon={MdClose}
-        variant="filled"
+        icon={MdSearch}
+        variant="outline"
+        background="white"
         size="lg"
+        onChange={handleChange}
+        handleClick={handleClick}
       ></MovieAutoComplete>
     </Container>
   );

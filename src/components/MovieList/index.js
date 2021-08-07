@@ -2,16 +2,25 @@ import React from "react";
 
 import { Container } from "./styles";
 import MovieCard from "../MovieCard";
+import { Box, Button, Spinner } from "@chakra-ui/react";
 
-function MovieList({ movies }) {
+function MovieList({ movies, handleClick, isLoading }) {
   return (
-    <Container>
-      <MovieCard></MovieCard>
-      <MovieCard></MovieCard>
-      <MovieCard></MovieCard>
-      <MovieCard></MovieCard>
-      <MovieCard></MovieCard>
-    </Container>
+    <div>
+      <Container>
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie}></MovieCard>
+        ))}
+      </Container>
+      <Box display="flex" justifyContent="center" alignItems="center" mb="4">
+        {!isLoading && (
+          <Button variant="ghost" size="md" onClick={handleClick}>
+            Ver mais
+          </Button>
+        )}
+        {isLoading && <Spinner color="red.500" />}
+      </Box>
+    </div>
   );
 }
 

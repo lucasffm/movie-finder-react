@@ -1,24 +1,30 @@
 import {
   InputGroup,
-  InputLeftElement,
   Input as ChakraInput,
   InputRightElement,
+  IconButton,
 } from "@chakra-ui/react";
 
 export const Input = (props) => (
   <InputGroup>
-    {props.left && (
-      <InputLeftElement
-        pointerEvents="none"
-        color="gray.300"
-        fontSize="1.2em"
-        children="$"
-      />
-    )}
-    <ChakraInput {...props} variant="filled" />
+    <ChakraInput onChange={props.handleChange} {...props} />
 
-    {props.right && (
-      <InputRightElement children={<props.icon color="green.500" />} />
+    {props.icon && (
+      <InputRightElement
+        children={
+          <IconButton
+            variant="unstyled"
+            onClick={props.handleClick}
+            cursor="pointer"
+            mr="2"
+            mt="2"
+            w="6"
+            h="6"
+            color="gray"
+            as={props.icon}
+          />
+        }
+      />
     )}
   </InputGroup>
 );

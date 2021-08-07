@@ -6,7 +6,6 @@ export const Container = styled.div`
   height: 200px;
   margin: 20px auto;
   display: flex;
-  justify-content: center;
   align-items: center;
   border-radius: 6px;
 `;
